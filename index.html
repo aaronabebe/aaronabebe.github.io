@@ -9,41 +9,82 @@
 
      <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
      <script type="text/javascript" src="js/jquery.scrollTo.js"></script>
+
+     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   </head>
   <body>
-    <div id="w">
-      <div id="content">
-        <nav id="stickynav" class="clearfix">
-          <ul id="nav">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#music">Music</a></li>
-            <li><a href="drumkit.html">Drumkit</a></li>
-          </ul>
-        </nav>
-
-        <div id="page1">
-          <a id="home" class="smooth"></a>
-            Home
-        </div>
-
-        <div id="page2">
-          <a id="music" class="smooth"></a>
-            Music
-        </div>
-
-      </div>
+    <div>
+      <nav id="stickynav" class="clearfix">
+        <ul id="nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#music">Music</a></li>
+          <li><a href="#fun">Fun</a></li>
+        </ul>
+      </nav>
     </div>
 
 
 
+        <div id="home">
+          <div class="clock">
+            <div class="clock-face">
+              <div class="hand hour-hand"></div>
+              <div class="hand min-hand"></div>
+              <div class="hand second-hand"></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="music">
+
+        </div>
+
+        <div class="links" id="fun">
+            <div class="link">
+              <a href="pages/drumkit.html">Drumkit</a>
+              <a href="pages/drumkit.html">Game</a>
+              <a href="pages/drumkit.html">Test</a>
+            </div>
+        </div>
 
     <script type="text/javascript">
-    $(function(){
-      $("#nav a").click(function(e){
-        e.preventDefault();
-        $('html,body').scrollTo(this.hash,this.hash);
+      //scroll animation
+      $(function(){
+        $("#nav a").click(function(e){
+          e.preventDefault();
+          $('html,body').scrollTo(this.hash,this.hash);
+        });
       });
-    });
+
+      //clock animation
+
+      const secondHand = document.querySelector('.second-hand');
+      const minHand = document.querySelector('.min-hand');
+      const hourHand = document.querySelector('.hour-hand');
+
+
+      function setDate() {
+        const now = new Date();
+
+        //second animation
+        const seconds = now.getSeconds();
+        const secondDegrees = ((seconds / 60) * 360) + 90;
+        secondHand.style.transform = `rotate(${secondDegrees}deg)`;
+
+        //minute animation
+        const minutes = now.getMinutes();
+        const minuteDegrees = ((minutes / 60) * 360) + 90;
+        console.log("min" + minuteDegrees);
+        minHand.style.transform = `rotate(${minuteDegrees}deg)`;
+
+        //hour animation
+        const hours = now.getHours();
+        const hourDegrees = ((hours / 60) * 360) + 90;
+        console.log("hours" + hourDegrees);
+        hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+      }
+      setInterval(setDate, 1000);
+
     </script>
   </body>
 </html>
