@@ -1,0 +1,28 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* display only the last tab */
+.tab-folder > .tab-content:target ~ .tab-content:last-child, .tab-folder > .tab-content {
+    display: none;
+}
+.tab-folder > :last-child, .tab-folder > .tab-content:target {
+    display: block;
+}
+
+.tab-content {
+    margin-top: 4%;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+}
