@@ -1,16 +1,23 @@
-@media screen and (min-width: 40.5em) {
+@media screen and (max-width: 500px) {
     body {
-        width: 100%;
+        font-family: 'Roboto Mono', monospace;
+        background-color: azure;
+        text-align: left;
+        margin: auto;
+        width: 90%;
     }    
 }
 
-body {
-    font-family: 'Roboto Mono', monospace;
-    background-color: azure;
-    text-align: left;
-    width: 35%;
-    margin: auto;
+@media screen and (min-width: 500px) {
+    body {
+        font-family: 'Roboto Mono', monospace;
+        background-color: azure;
+        text-align: left;
+        width: 35%;
+        margin: auto;
+    }
 }
+
 
 a {
     text-decoration: none;
