@@ -1,0 +1,41 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: azure;
+    text-align: left;
+    width: 30%;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border: 1px solid black;
+}
+
+/* display only the last tab */
+.tab-folder > .tab-content:target ~ .tab-content:last-child, .tab-folder > .tab-content {
+    display: none;
+}
+.tab-folder > :last-child, .tab-folder > .tab-content:target {
+    display: block;
+}
+
+.tab-folder {
+    height: 400px;
+}
+
+ul {
+    list-style: none;
+}
+
+#music-tab {
+    text-align: left;
+}
