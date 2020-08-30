@@ -1,54 +1,141 @@
 @media screen and (max-width: 500px) {
     body {
-        font-family: 'Roboto Mono', monospace;
-        background-color: azure;
-        text-align: left;
-        margin: auto;
         width: 90%;
+    }
+    a {
+        text-shadow: #ff8906 30px 30px 7px;
+
+    }
+    h1 {
+        text-shadow: #ff8906 100px 30px 7px;
+    }
+    a:hover {
+        text-shadow: #fffffe 30px 28px 7px;
     }    
 }
 
 @media screen and (min-width: 500px) {
     body {
-        font-family: 'Roboto Mono', monospace;
-        background-color: azure;
-        text-align: left;
-        width: 35%;
-        margin: auto;
+        width: 45%;
+    }
+    a {
+        text-shadow: #ff8906 450px 30px 7px;
+
+    }
+    h1 {
+        text-shadow: #ff8906 450px 30px 7px;
+    }
+    a:hover {
+        text-shadow: #fffffe 450px 28px 7px;
     }
 }
 
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #0f0e17;
+    text-align: left;
+    margin: auto;
+    margin-top: 2%;
+}
+
+h1 {
+    color: #fffffe;
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+p {
+    color: #a7a9be;
+}
 
 a {
     text-decoration: none;
-    color: black;
+    color: #fffffe;
     font-weight: bold;
 }
 
 a:hover {
-    text-decoration: underline;
+    color: #ff8906;
+}
+
+table {
+    color: #ff8906;
+}
+
+@keyframes pulse {
+    0% {
+    }
+    50% {
+    }
+    100% {
+
+    }
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes drawLeftToRight {
+    from {
+        width: 0%;
+        height: 50px;
+    }
+    to {
+        width: 100%;
+        height: 0px;
+    }
+}
+
+.content {
+    height: 50%;
 }
 
 hr {
-    border: 1px solid black;
+    animation-name: drawLeftToRight;
+    animation-duration: 5s;
+    border: 1px solid #ff8906;
+    animation-fill-mode: forwards;
 }
 
-/* display only the last tab */
-.tab-folder > .tab-content:target ~ .tab-content:last-child, .tab-folder > .tab-content {
-    display: none;
-}
-.tab-folder > :last-child, .tab-folder > .tab-content:target {
-    display: block;
-}
-
-.tab-folder {
-    height: 400px;
+.firstFade {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
 }
 
-ul {
-    list-style: none;
+.secondFade {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
 }
 
-#music-tab {
-    text-align: left;
+.thirdFade {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+
+.fourthFade {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+}
+
+.fifthFade {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 3s;
+    animation-delay: 3.5s;
+    animation-fill-mode: forwards;
 }
