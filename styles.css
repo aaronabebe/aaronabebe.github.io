@@ -2,31 +2,11 @@
     body {
         width: 90%;
     }
-    a {
-        text-shadow: #ff8906 30px 30px 7px;
-
-    }
-    h1 {
-        text-shadow: #ff8906 100px 30px 7px;
-    }
-    a:hover {
-        text-shadow: #fffffe 30px 28px 7px;
-    }    
 }
 
 @media screen and (min-width: 500px) {
     body {
         width: 45%;
-    }
-    a {
-        text-shadow: #ff8906 450px 30px 7px;
-
-    }
-    h1 {
-        text-shadow: #ff8906 450px 30px 7px;
-    }
-    a:hover {
-        text-shadow: #fffffe 450px 28px 7px;
     }
 }
 
