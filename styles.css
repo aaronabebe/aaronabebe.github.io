@@ -2,120 +2,131 @@
     body {
         width: 90%;
     }
+
+    .section {
+        width: 100%;
+    }
+
+    .work-example img {
+        max-width: 100%;
+    }
 }
 
 @media screen and (min-width: 500px) {
     body {
-        width: 45%;
+        width: 40%;
+    }
+    .section {
+        width: 80%;
+    }
+
+    .work-example img {
+        max-width: 120%;
     }
 }
 
+:root {
+    --color-primary: #ff5959;
+    --color-secondary: #ff1f5a;
+    --color-background: #f8f5f2;
+    --color-text: #222525;
+    --font-primary: "Playfair Display", serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: 'Roboto Mono', monospace;
-    background-color: #0f0e17;
+    font-family: var(--font-primary);
+    background-color: var(--color-background);
+    color: var(--color-text);
     text-align: left;
     margin: auto;
     margin-top: 2%;
+    font-size: 1rem;
 }
 
 h1 {
-    color: #fffffe;
-    animation-name: pulse;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
+    font-size: 5rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0;
 }
 
-p {
-    color: #a7a9be;
+h2 {
+    font-weight: 400;
+    margin: 0;
+    font-size: 3rem;
 }
 
 a {
     text-decoration: none;
-    color: #fffffe;
-    font-weight: bold;
+    color: var(--color-text);
+    transition: ease-in-out 0.2s;
 }
 
 a:hover {
-    color: #ff8906;
-}
-
-table {
-    color: #ff8906;
-}
-
-@keyframes pulse {
-    0% {
-    }
-    50% {
-    }
-    100% {
-
-    }
-}
-
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-@keyframes drawLeftToRight {
-    from {
-        width: 0%;
-        height: 50px;
-    }
-    to {
-        width: 100%;
-        height: 0px;
-    }
-}
-
-.content {
-    height: 50%;
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
 }
 
 hr {
-    animation-name: drawLeftToRight;
-    animation-duration: 5s;
-    border: 1px solid #ff8906;
-    animation-fill-mode: forwards;
+    border: 1px solid var(--color-text);
+    opacity: 0.1;
 }
 
-.firstFade {
-    opacity: 0;
-    animation-name: fadeIn;
-    animation-duration: 1s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: start;
 }
 
-.secondFade {
-    opacity: 0;
-    animation-name: fadeIn;
-    animation-duration: 1s;
-    animation-delay: 2s;
-    animation-fill-mode: forwards;
+nav li {
+    padding: 5px 10px 5px 0;
 }
 
-.thirdFade {
-    opacity: 0;
-    animation-name: fadeIn;
-    animation-duration: 1s;
-    animation-delay: 3s;
-    animation-fill-mode: forwards;
+.content {
+    padding: 20px 0;
 }
 
-.fourthFade {
-    opacity: 0;
-    animation-name: fadeIn;
-    animation-duration: 1s;
-    animation-delay: 4s;
-    animation-fill-mode: forwards;
+.content a {
+    font-weight: 500;
 }
 
-.fifthFade {
-    opacity: 0;
-    animation-name: fadeIn;
-    animation-duration: 3s;
-    animation-delay: 3.5s;
-    animation-fill-mode: forwards;
+.section {
+    margin: 50px 0;
+}
+
+.work-example {
+    padding: 20px 0;
+}
+
+.work-example img {
+    height: auto;
+    display: block;
+    box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: ease-in-out 0.3s;
+}
+
+.work-example img:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+#contact div {
+    padding: 10px 0;
+    font-size: 1.5rem;
+}
+
+#contact div a {
+    border-bottom: 1px solid var(--color-text);
+}
+
+#contact div a:hover {
+    border-bottom: 1px solid var(--color-primary);
 }
