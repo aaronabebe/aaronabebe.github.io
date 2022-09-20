@@ -1,0 +1,107 @@
+---
+---
+
+<div>
+    <div class="cursor cursor--small"></div>
+    <div class="cursor cursor--canvas"></div>
+</div>
+<script is:inline>
+
+    // set the starting position of the cursor outside of the screen
+    let clientX = -100;
+    let clientY = -100;
+
+    let lastX = 0;
+    let lastY = 0;
+
+    const innerCursor = document.querySelector(".cursor--small");
+    const followCursor = document.querySelector(".cursor--canvas");
+
+    const lerp = (a, b, n) => {
+        return (1 - n) * a + n * b;
+    };
+
+    const initCursor = () => {
+        document.addEventListener("mousemove", (e) => {
+            clientX = e.clientX;
+            clientY = e.clientY;
+        });
+
+        const render = () => {
+            innerCursor.style.transform = `translate(${clientX}px, ${clientY}px)`;
+
+            lastX = lerp(lastX, clientX, 0.1);
+            lastY = lerp(lastY, clientY, 0.1);
+
+            followCursor.style.transform = `translate(${lastX}px, ${lastY}px)`;
+
+            requestAnimationFrame(render);
+        };
+        requestAnimationFrame(render);
+    };
+    initCursor();
+
+    const initHovers = () => {
+        // find the center of the link element and set stuckX and stuckY
+        // these are needed to set the position of the noisy circle
+        const handleMouseEnter = (e) => {
+            const navItem = e.currentTarget;
+            const navItemBox = navItem.getBoundingClientRect();
+            stuckX = Math.round(navItemBox.left + navItemBox.width / 2);
+            stuckY = Math.round(navItemBox.top + navItemBox.height / 2);
+            isStuck = true;
+            followCursor.style.background = '#FF0000';
+            followCursor.style.width = '24px';
+            followCursor.style.height = '24px';
+        };
+
+        // reset isStuck on mouseLeave
+        const handleMouseLeave = () => {
+            isStuck = false;
+            followCursor.style.background = '#99FFCD';
+            followCursor.style.width = '12px';
+            followCursor.style.height = '12px';
+        };
+
+        // add event listeners to all items
+        const linkItems = document.querySelectorAll("a");
+        linkItems.forEach((item) => {
+            item.addEventListener("mouseenter", handleMouseEnter);
+            item.addEventListener("mouseleave", handleMouseLeave);
+        });
+    };
+
+    initHovers();
+</script>
+<style lang="scss">
+    @import "../styles/breakpoints";
+    @import "../styles/colors";
+
+    .cursor {
+        position: fixed;
+        left: 0;
+        top: 0;
+        pointer-events: none;
+    }
+
+    .cursor--small {
+        width: 8px;
+        height: 8px;
+        left: -2.5px;
+        top: -2.5px;
+        border-radius: 50%;
+        z-index: 11000;
+        background: $primary;
+    }
+
+    .cursor--canvas {
+        width: 12px;
+        height: 12px;
+        left: -2.5px;
+        top: -2.5px;
+        border-radius: 50%;
+        z-index: 12000;
+        background: $secondary;
+        transition: width 0.5s ease-in, height 0.5s ease-in, background 0.5s ease-in;
+    }
+</style>

@@ -1,0 +1,38 @@
+---
+import { SITE_TITLE } from '../config';
+import Nav from "./Nav.astro";
+---
+
+<header>
+	<h2>
+		{SITE_TITLE}
+	</h2>
+	<Nav />
+</header>
+<style lang='scss'>
+	@import '../styles/breakpoints';
+	@import '../styles/colors';
+
+	header {
+		width: 100%;
+		overflow-x: hidden;
+	}
+
+	h2 {
+		font-size: 1.5em;
+		font-family: 'Playfair Display' 'serif';
+		font-style: italic;
+		font-weight: 100;
+		border-top: 1px solid $font-main;
+		color: black;
+		border-bottom: 1px solid $font-main;;
+		line-height: 0.9;
+		text-align: left;
+		margin: 0;
+		padding: 10px;
+
+		@include for-desktop-up {
+			font-size: 3em;
+		}
+	}
+</style>

@@ -1,0 +1,132 @@
+@media screen and (max-width: 500px) {
+    body {
+        width: 90%;
+    }
+
+    .section {
+        width: 100%;
+    }
+
+    .work-example img {
+        max-width: 100%;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    body {
+        width: 40%;
+    }
+    .section {
+        width: 80%;
+    }
+
+    .work-example img {
+        max-width: 120%;
+    }
+}
+
+:root {
+    --color-primary: #ff5959;
+    --color-secondary: #ff1f5a;
+    --color-background: #f8f5f2;
+    --color-text: #222525;
+    --font-primary: "Playfair Display", serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    text-align: left;
+    margin: auto;
+    margin-top: 2%;
+    font-size: 1rem;
+}
+
+h1 {
+    font-size: 5rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0;
+}
+
+h2 {
+    font-weight: 400;
+    margin: 0;
+    font-size: 3rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text);
+    transition: ease-in-out 0.2s;
+}
+
+a:hover {
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
+}
+
+hr {
+    border: 1px solid var(--color-text);
+    opacity: 0.1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: start;
+}
+
+nav li {
+    padding: 5px 10px 5px 0;
+}
+
+.content {
+    padding: 20px 0;
+}
+
+.content a {
+    font-weight: 500;
+}
+
+.section {
+    margin: 50px 0;
+}
+
+.work-example {
+    padding: 20px 0;
+}
+
+.work-example img {
+    height: auto;
+    display: block;
+    box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: ease-in-out 0.3s;
+}
+
+.work-example img:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+#contact div {
+    padding: 10px 0;
+    font-size: 1.5rem;
+}
+
+#contact div a {
+    border-bottom: 1px solid var(--color-text);
+}
+
+#contact div a:hover {
+    border-bottom: 1px solid var(--color-primary);
+}

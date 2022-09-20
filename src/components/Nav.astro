@@ -1,0 +1,27 @@
+---
+import HeaderLink from './HeaderLink.astro';
+---
+
+<nav>
+    <HeaderLink href="/" text="Home">Home</HeaderLink>
+    <HeaderLink href="/work" text="Work">Work</HeaderLink>
+    <HeaderLink href="/music" text="Music">Music</HeaderLink>
+    <HeaderLink href="/blog" text="Blog">Blog</HeaderLink>
+    <HeaderLink href="/about" text="About">About</HeaderLink>
+</nav>
+<style lang="scss">
+	@import '../styles/breakpoints';
+
+	nav {
+        font-size: 2em;
+        font-family: 'Bebas Neue';
+		text-align: center;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+
+		@include for-desktop-up {
+			font-size: 7em;
+		}
+	}
+</style>

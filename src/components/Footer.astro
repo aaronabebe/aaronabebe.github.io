@@ -1,0 +1,18 @@
+---
+const today = new Date();
+---
+
+<footer>
+	&copy; {today.getFullYear()} Aaron Abebe.
+</footer>
+<style lang="scss">
+    @import "../styles/colors";
+
+	footer {
+		border-top: 1px solid $primary;
+		padding: 25px;
+		font-style: italic;
+		text-align: center;
+		font-weight: 100;
+	}
+</style>

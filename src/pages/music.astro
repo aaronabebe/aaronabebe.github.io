@@ -1,0 +1,49 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import Cursor from "../components/Cursor.astro";
+import ComingSoon from "../components/ComingSoon.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    </head>
+    <body>
+        <Header />
+        <main>
+            <!-- <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/c7Pvc5KHzJ4?controls=0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; modestbranding"
+                allowfullscreen></iframe>
+            <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/gAJ-nTYVeR0?controls=0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; modestbranding"
+                allowfullscreen></iframe>
+
+            <iframe
+                width="100%"
+                height="300"
+                scrolling="no"
+                frameborder="no"
+                allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/819633769&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+            ></iframe> -->
+            <ComingSoon />
+        </main>
+
+        <Footer />
+        <Cursor />
+    </body>
+</html>

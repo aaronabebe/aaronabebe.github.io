@@ -1,0 +1,23 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import ComingSoon from "../components/ComingSoon.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import Cursor from "../components/Cursor.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    </head>
+    <body>
+        <Header />
+        <main>
+            <ComingSoon />
+        </main>
+        <Footer />
+        <Cursor />
+    </body>
+</html>

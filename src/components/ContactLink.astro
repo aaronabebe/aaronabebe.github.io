@@ -1,0 +1,55 @@
+---
+const { href, text, class: className, ...props } = Astro.props;
+---
+
+<a href={href} target='_blank' class:list={[className]} {...props}>
+    <slot />
+</a>
+<style lang="scss">
+    @import "../styles/breakpoints";
+    @import "../styles/colors";
+    @import "../styles/animations";
+
+    a {
+        cursor: pointer;
+        position: relative;
+        white-space: nowrap;
+        padding: 0 5px;
+    }
+
+    a::before,
+    a::after {
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background: $background;
+        top: 100%;
+        left: 0;
+        pointer-events: none;
+    }
+
+    a::before {
+        content: "";
+        /* show by default */
+    }
+
+    a::before {
+        height: 100%;
+        top: 0;
+        opacity: 0;
+    }
+
+    a:hover::before {
+        opacity: 1;
+        animation: coverUp 0.5s ease forwards;
+    }
+
+    a::after {
+        content: "";
+        transition: opacity 0.3s;
+    }
+
+    a:hover::after {
+        opacity: 0;
+    }
+</style>
