@@ -38,8 +38,6 @@ const { title, description, image = "/social-image.jpg" } = Astro.props;
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
-<SEO title={title} description={description} />
-
 <!-- Matomo -->
 <script is:inline>
 	var _paq = window._paq = window._paq || [];
@@ -59,3 +57,5 @@ const { title, description, image = "/social-image.jpg" } = Astro.props;
   </script>
   <noscript><p><img src="//aaronabb.uber.space/matomo.php?idsite=5&amp;rec=1" style="border:0;" alt="" /></p></noscript>
   <!-- End Matomo Code -->
+
+<SEO title={title} description={description} />
