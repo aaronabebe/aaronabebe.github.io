@@ -25,5 +25,4 @@ During the two years I also became very proficient in working with Blender as we
 After two very succesful years, in which we where able to fulfill a lot of our goals, with the help of great customers 
 and some public grants, I decided to look for different opportunities and focus on finishing my Master's deegree.
 
-Currently I am working on my master thesis in cooperation with <a href="https://www.oscar-navigation.com/" target='_blank'>OSCAR Navigation</a>. 
-There I will be looking to use Contrastive Learning and other pre-training steps to improve their internal machine learning models.
+Currently I am working on my master thesis in cooperation with <a href="https://www.sea.ai/" target='_blank'>sea.ai</a>.

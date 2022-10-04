@@ -1,10 +1,10 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
-import ComingSoon from "../components/ComingSoon.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import Cursor from "../components/Cursor.astro";
+import ThreeAlt from "../components/ThreeAlt.astro";
 ---
 
 <!DOCTYPE html>
@@ -14,10 +14,178 @@ import Cursor from "../components/Cursor.astro";
     </head>
     <body>
         <Header />
-        <main>
-            <ComingSoon />
-        </main>
+        <div class="websites">
+            <h1 class="title">Experience</h1>
+            <ul>
+                <li>4+ years Cloud and Microservice Development</li>
+                <li>3+ years DevOps Engineering</li>
+                <li>2+ years 3D Development (Blender)</li>
+                <li>2+ years Engineering Team Management</li>
+                <li>2+ year Web Design and Development</li>
+                <li>1+ year Deep Learning and Data Science</li>
+            </ul>
+        </div>
+        <div class="websites">
+            <h1 class="title">Freelance</h1>
+            <article>
+                <p>
+                    I support my clients with tailored consultation engagements,
+                    by applying expert knowledge and experience with a high
+                    claim in software craftship. I focus on how concepts work
+                    and why specific solutions are needed, and only then how
+                    they are implemented.
+                </p>
+                <p>
+                    My main goal is to work on solutions that the projects
+                    actually need. For that, it's important to first understand
+                    the project's situation and to work on a tailored solution.
+                    If that sounds interesting feel free to
+                    <a href="mailto:aaron.abebe@gmail.com">contact</a>
+                    me. My services are available in German or English.
+                </p>
+            </article>
+        </div>
+        <div class="websites">
+            <h1 class="title">Web Design</h1>
+            <div class="highlight-paragraph">
+                I can help you with conception and realization of your website,
+                from beginning to end. As I love doing web design in my free
+                time I prefer creative work and interesting websites ideas. Look
+                below for some recent examples of websites I made.
+            </div>
+        </div>
+        <div class="img-gallery">
+            <div>
+                <a href="https://breitband.band" target="_blank">
+                    <h2>breitband.band</h2>
+                    <img src="/breitband-website.jpg" alt="Breitband Website" />
+                </a>
+            </div>
+            <div>
+                <a href="https://respect-existence.at" target="_blank">
+                    <h2>respect-existence.at</h2>
+                    <img
+                        src="/respect-existence-website.jpg"
+                        alt="Breitband Website"
+                    />
+                </a>
+            </div>
+        </div>
+        <ThreeAlt />
         <Footer />
         <Cursor />
+        <style lang="scss">
+            @import "../styles/colors";
+            @import "../styles/breakpoints";
+
+            .websites {
+                padding-top: 3em;
+                width: 30ch;
+                text-align: left;
+                margin: auto;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+
+                @include for-desktop-up {
+                    width: 80ch;
+                }
+            }
+
+            .img-gallery {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                padding: 20px;
+
+                @include for-desktop-up {
+                    flex-direction: row;
+                    padding: 40px;
+                }
+
+                h2 {
+                    text-align: center;
+                    font-family: "Bebas Neue";
+                    font-style: italic;
+                    border-bottom: 3px solid $primary;
+                    width: fit-content;
+                    padding-top: 20px;
+                }
+            }
+
+            p {
+                font-family: "Roboto";
+                font-size: 1.2em;
+                font-weight: 100;
+
+                @include for-desktop-up {
+                    font-size: 1.3em;
+                }
+            }
+
+            .img-bg {
+                background-image: $primGradient;
+                z-index: -99;
+                border: 1px solid $primary;
+                margin: 20px;
+            }
+
+            img {
+                width: 250px;
+                border: 3px solid $primary;
+                box-shadow: 3px 3px 0 $background, 6px 6px 0 $primary;
+                transition: 0.5s ease-in-out;
+                transform: skew(-10deg);
+                margin: 0 20px;
+
+                @include for-desktop-up {
+                    width: 500px;
+                    margin: 20px;
+                }
+            }
+
+            img:hover {
+                box-shadow: 9px 9px 0 $accent, 18px 18px 0 $primary;
+                transform: scale(115%) skew(-10deg);
+                transition: 0.5s ease-in-out;
+            }
+
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            ul li {
+                display: flex;
+            }
+
+            li {
+                background-image: $secondaryGradient;
+                // background-color: $accent;
+                padding: 5px;
+                border: 2px solid $primary;
+                margin-top: 20px;
+                font-size: 1.2em;
+                font-family: "Bebas Neue";
+                box-shadow: 3px 3px 0 $background, 6px 6px 0 $primary;
+
+                @include for-desktop-up {
+                    font-size: 1.5em;
+                }
+                
+            }
+
+            .highlight-paragraph {
+                background-image: $primGradient;
+                padding: 5px;
+                border: 2px solid $primary;
+                margin-top: 20px;
+                font-size: 1.3em;
+                font-family: "Bebas Neue";
+
+                @include for-desktop-up {
+                    font-size: 1.5em;
+                }
+            }
+        </style>
     </body>
 </html>

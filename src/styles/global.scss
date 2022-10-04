@@ -12,14 +12,15 @@ html::after {
     z-index: 1000;
 }
 
-// html::before {
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     background: $primary;
-//     animation: slideInBottom 0.3s ease-in-out forwards;
-// }
+html::before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: $backgroundGradient;
+    animation: slideInBottom 0.8s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+    transition: transform 0.8s cubic-bezier(0.76, 0, 0.24, 1) 0.5s;
+}
 
 html,
 body {
@@ -42,6 +43,10 @@ main {
     margin: auto;
     word-wrap: break-word;
     overflow-wrap: break-word;
+}
+
+::selection {
+    background: $secondary;
 }
 
 body::before {
@@ -113,4 +118,20 @@ blockquote {
     padding: 2px 0px 2px 20px;
     margin: 0px;
     font-style: italic;
+}
+
+.title {
+    width: fit-content;
+    font-size: 2.5em;
+    font-family: 'Playfair Display';
+    font-style: italic;
+    margin: 0.25em 0 0;
+    padding: 10px;
+    background-color: $primary;
+    color: $background;
+
+    @include for-desktop-up {
+        font-size: 3em;
+        flex-direction: row;
+    }
 }
