@@ -9,6 +9,7 @@ During and after finishing my Bachelors degree in Media Informatics from Univers
 <a href="https://compaxdigital.com/" target='_blank'>Compax</a> focusing on Java development and database migrations for large 
 scale systems of for german telecommunication companies. The work there was cut short after a few months,
  which led to me taking a break and travelling.
+ <Three/>
 
 My next work opportunity arose at Raiffeisen Software where I was part of their trainee-program and consequently part of the 
 cross cutting concerns and API Team. 
