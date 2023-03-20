@@ -17,12 +17,12 @@ import ThreeAlt from "../components/ThreeAlt.astro";
         <div class="websites">
             <h1 class="title">Experience</h1>
             <ul>
-                <li>4+ years Cloud and Microservice Development</li>
-                <li>3+ years DevOps Engineering</li>
-                <li>2+ years 3D Development (Blender)</li>
-                <li>2+ years Engineering Team Management</li>
-                <li>2+ year Web Design and Development</li>
-                <li>1+ year Deep Learning and Data Science</li>
+                <li>{new Date().getFullYear() - 2017}+ years Cloud and Microservice Development</li>
+                <li>{new Date().getFullYear() - 2018}+ years DevOps Engineering</li>
+                <li>{new Date().getFullYear() - 2021}+ year Deep Learning and ML Engineering</li>
+                <li>{new Date().getFullYear() - 2021}+ years Engineering Team Management</li>
+                <li>{new Date().getFullYear() - 2021}+ year Web Design and Development</li>
+                <li>{new Date().getFullYear() - 2021}+ years 3D Development (Blender)</li>
             </ul>
         </div>
         <div class="websites">
@@ -56,11 +56,19 @@ import ThreeAlt from "../components/ThreeAlt.astro";
         </div>
         <div class="img-gallery">
             <div>
-                <a href="https://breitband.band" target="_blank">
-                    <h2>breitband.band</h2>
-                    <img src="/breitband-website.jpg" alt="Breitband Website" />
+                <a href="https://conqret.com" target="_blank">
+                    <h2>conqret.com</h2>
+                    <img src="/conqret-website.jpg" alt="conqret website" />
                 </a>
             </div>
+            <div>
+                <a href="https://breitband.band" target="_blank">
+                    <h2>breitband.band</h2>
+                    <img src="/breitband-website.jpg" alt="breitband website" />
+                </a>
+            </div>
+        </div>
+        <div class="img-gallery">
             <div>
                 <a href="https://respect-existence.at" target="_blank">
                     <h2>respect-existence.at</h2>
@@ -95,11 +103,10 @@ import ThreeAlt from "../components/ThreeAlt.astro";
                 display: flex;
                 flex-direction: column;
                 justify-content: space-evenly;
-                padding: 20px;
+                padding: 10px;
 
                 @include for-desktop-up {
                     flex-direction: row;
-                    padding: 40px;
                 }
 
                 h2 {
