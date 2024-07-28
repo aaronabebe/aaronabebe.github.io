@@ -1,7 +1,6 @@
 ---
 ---
-
-<div id="three-container" class="three-container"></div>
+<div id="three-container" class="three-container no-invert dark:invert"></div>
 
 <script is:inline id="vertexShader" type="x-shader/x-vertex">
 
@@ -26,9 +25,9 @@
         vec2 position = - 1.0 + 2.0 * vUv;
 
         float red = abs( sin( position.x * position.y + time / 5.0 ) );
-        float green = abs( sin( position.x * position.y + time / 4.0 ) );
+        float green = abs( sin( position.x * position.y + time / 10.0 ) );
         float blue = abs( sin( position.x * position.y + time / 3.0 ) );
-        gl_FragColor = vec4( red, green, blue, 1.0 );
+        gl_FragColor = vec4( red, 0.0, blue, 0.2 );
 
     }
 
@@ -59,12 +58,12 @@
     const uniforms = { time: { value: 1.0 } };
     const material = new THREE.ShaderMaterial({
                 uniforms: uniforms,
-                vertexShader: document.getElementById('vertexShader').textContent,
-                fragmentShader: document.getElementById('fragmentShader').textContent
+                vertexShader: document.getElementById("vertexShader").textContent,
+                fragmentShader: document.getElementById("fragmentShader").textContent
             });
 
 
-    const mesh = new THREE.Mesh(new THREE.TorusKnotGeometry( 1.5, 0.5, 100, 200 ), material);
+    const mesh = new THREE.Mesh(new THREE.TorusKnotGeometry( 1.5, 0.5, 15, 50 ), material);
     scene.add(mesh);
 
     function animate() {
@@ -81,15 +80,12 @@
     animate();
 
 </script>
-<style lang="scss">
-    @import "../styles/colors";
-
+<style>
     .three-container {
-        width: 700px;
-        height: 700px;
-        display: flex;
+        width: 500px;
+        height: 500px;
         position: fixed;
-        top: 0;
+        top: 50px;
         right: 0;
         z-index: -9999;
         float: right;
