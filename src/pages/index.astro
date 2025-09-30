@@ -12,8 +12,7 @@ const blog = (await getCollection("blog"))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0,SITE.NUM_POSTS_ON_HOMEPAGE);
 
-const projects = (await getCollection("projects"))
-  .filter(project => !project.data.draft)
+const projects = (await getCollection("projects")) .filter(project => !project.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0,SITE.NUM_PROJECTS_ON_HOMEPAGE);
 
@@ -76,16 +75,16 @@ const work = await Promise.all(
       <section class="space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
           <h5 class="font-semibold text-black dark:text-white">
-            Latest posts
+            Recent projects
           </h5>
-          <Link href="/blog">
-            See all posts
+          <Link href="/projects">
+            See all projects
           </Link>
         </div>
         <ul class="flex flex-col gap-4">
-          {blog.map(post => (
+          {projects.map(project => (
             <li>
-              <ArrowCard entry={post} />
+              <ArrowCard entry={project} />
             </li>
           ))}
         </ul>
@@ -123,20 +122,22 @@ const work = await Promise.all(
       <section class="space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
           <h5 class="font-semibold text-black dark:text-white">
-            Recent projects
+            Latest posts
           </h5>
-          <Link href="/projects">
-            See all projects
+          <Link href="/blog">
+            See all posts
           </Link>
         </div>
         <ul class="flex flex-col gap-4">
-          {projects.map(project => (
+          {blog.map(post => (
             <li>
-              <ArrowCard entry={project} />
+              <ArrowCard entry={post} />
             </li>
           ))}
         </ul>
       </section>
+
+
     </div>
   </Container>
 </PageLayout>
